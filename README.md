@@ -6,7 +6,7 @@ fellowships, internships, jobs and announcements, all in one place.
 
 ## Live Site
 
-Coming soon
+(<https://next-step-africa.vercel.app/>)
 
 ## Built With
 
