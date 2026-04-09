@@ -1,5 +1,6 @@
 // @ts-nocheck
 
+
 // import React from 'react'
 // import { useParams } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
@@ -149,9 +150,15 @@ function SinglePost() {
           Deadline: {opportunity.deadline}
         </p>
 
-        <p className="text-gray-600 leading-relaxed mb-8">
-          {opportunity.summary}
-        </p>
+        <div className="text-gray-600  leading-relaxed mb-8 space-y-4">
+          {opportunity.summary.split('\n').map((paragraph, index) => (
+            paragraph.trim() !== '' && (
+              <p key={index}>
+                {paragraph}
+              </p>
+            )
+          ))}
+        </div>
 
 
        <a  href={opportunity.apply_link}

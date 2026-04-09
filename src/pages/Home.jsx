@@ -33,6 +33,7 @@ const Home = () => {
   //   },
   // ]
   const [opportunities, setOpportunities] = useState([])
+
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     async function fetchOpportunities() {
@@ -63,29 +64,29 @@ const Home = () => {
     )
   }
   return (
-    
-      <div>
-        <section className="bg-indigo-600 text-white text-center py-20 px-6">
-          <h1 className="text-4xl font-bold mb-10 md:mb-6">Find your next big Opportunity</h1>
-          <p className="text-lg max-w-xl mx-auto">
-            Scholarships, fellowships, internships and jobs —
-            all in one place for African students and professionals.
-          </p>
-        </section>
-      <section className="max-w-5xl mx-auto py-12 px-6">
+
+    <div>
+      <section className="bg-indigo-600 text-white text-center py-20 px-6">
+        <h1 className="text-4xl font-bold mb-10 md:mb-6">Find your next big Opportunity</h1>
+        <p className="text-lg max-w-xl mx-auto">
+          Scholarships, fellowships, internships and jobs —
+          all in one place for African students and professionals.
+        </p>
+      </section>
+      <section className="max-w-7xl mx-auto py-12 px-6">
         <p>Note: by completing any application u consent and aggreaa to our <Link to='/terms/conditions' className='italic text-blue-400'>Terms and conditions</Link> and <Link to='/privacy/policy' className='itaic text-blue-400'>Privacy policy</Link> </p>
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            Latest Opportunities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {opportunities.map((opportunity) => (
-              <OpportunityCard key={opportunity.id} opportunity={opportunity} />
-            ) )}
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Latest Opportunities
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {opportunities.map((opportunity) => (
+            <OpportunityCard key={opportunity.id} opportunity={opportunity} />
+          ))}
         </div>
         {/* <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F2184567635684637%2F&show_text=true&width=267&t=0" width="267" height="591" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
         <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fweb.facebook.com%2Freel%2F905488682112715%2F&show_text=true&width=267&t=0" width="267" height="591" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> */}
-        </section>
-      </div>
+      </section>
+    </div>
 
   )
 }
