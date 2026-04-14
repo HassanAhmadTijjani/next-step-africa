@@ -58,7 +58,7 @@ const Home = () => {
           />
         </Helmet>
 
-        <div className="animate-spin rounded-full h-24 w-24 border-b-4 m-auto border-gray-900 "></div>
+        <div className="animate-spin rounded-full h-44 w-44 border-b-4 m-auto border-gray-900 "></div>
         <p className="text-gray-500 text-lg">Loading opportunities...</p>
       </div>
     )
@@ -74,7 +74,7 @@ const Home = () => {
         </p>
       </section>
       <section className="max-w-7xl mx-auto py-12 px-6">
-        <p>Note: by completing any application u consent and aggreaa to our <Link to='/terms/conditions' className='italic text-blue-400'>Terms and conditions</Link> and <Link to='/privacy/policy' className='itaic text-blue-400'>Privacy policy</Link> </p>
+        <p>Note: by completing any application you consent and agree to our <Link to='/terms/conditions' className='italic text-blue-400'>Terms and conditions</Link> and <Link to='/privacy/policy' className='itaic text-blue-400'>Privacy policy</Link> </p>
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Latest Opportunities
         </h2>

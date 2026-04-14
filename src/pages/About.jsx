@@ -53,7 +53,7 @@ const About = () => (
         <div className="bg-blue-100 p-4 py-8  h-80 rounded border border-gray-400">
           <Target size={60} className='mx-auto' />
           <h2 className="font-bold text-gray-800 mb-6">Mission</h2>
-          <p className="text-gray-600 leading-relaxed">Our mission is to connect students and young professionals with life-changing opportunities. We help individuals discover scholarships, internships, and job opportunities that support their growth and career success.</p>mb-8
+          <p className="text-gray-600 leading-relaxed">Our mission is to connect students and young professionals with life-changing opportunities. We help individuals discover scholarships, internships, and job opportunities that support their growth and career success.</p>
         </div>
         <div className="bg-purple-100 p-4 py-8  h-80 rounded border border-gray-400">
           <Lightbulb size={60} className='mx-auto' />

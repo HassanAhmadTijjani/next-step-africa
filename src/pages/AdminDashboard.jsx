@@ -71,7 +71,7 @@ const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="text-center py-20">
-        <div className="animate-spin rounded-full h-24 w-24 border-b-4 m-auto border-gray-900 "></div>
+        <div className="animate-spin rounded-full h-44 w-44 border-b-4 m-auto border-gray-900 "></div>
         <p className="text-gray-500">Loading dashboard...</p>
       </div>
     )

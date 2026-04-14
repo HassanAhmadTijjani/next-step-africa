@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,7 +12,7 @@ const OpportunityCard = ({opportunity}) => {
     }
   return (
       <div>
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
+          <div className=" bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
               <div>
                   <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
                       {opportunity.category}
