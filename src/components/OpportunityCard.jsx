@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 // @ts-ignore
-const OpportunityCard = ({opportunity}) => {
+const OpportunityCard = ({opportunity, isNew}) => {
     const [showFullSummary, setShowFullSummary] = useState(false)
     let summary = opportunity.summary
     if (!showFullSummary) {
@@ -14,6 +14,11 @@ const OpportunityCard = ({opportunity}) => {
       <div>
           <div className=" bg-white rounded-xl shadow-md p-6 flex flex-col justify-between">
               <div>
+                  {isNew && (
+                      <span className="bg-green-500 text-white text-xs px-2 py-1 mx-4 rounded-full">
+                          New
+                      </span>
+                  )}
                   <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
                       {opportunity.category}
                   </span>

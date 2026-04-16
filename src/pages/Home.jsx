@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 // @ts-nocheck
+
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -6,6 +8,7 @@ import OpportunityCard from '../components/OpportunityCard'
 import supabase from '../supabaseClient'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import SearchBar from '../components/SearchBar'
 
 
 const Home = () => {
@@ -33,8 +36,23 @@ const Home = () => {
   //   },
   // ]
   const [opportunities, setOpportunities] = useState([])
-
   const [loading, setLoading] = useState(true)
+  const [selectedCat, setSelectedCat] = useState('All')
+  const [searchTerm, setSearchTerm] = useState('')
+  const isActive = (category) => selectedCat === category ? 'bg-blue-600 text-white p-2 rounded shadow-md' : 'bg-white text-gray-600 border border-gray-300 p-2 rounded'
+  // Filtering
+  const filteredOpportunities = opportunities.filter((item) => {
+    const matchesCategory = selectedCat === 'All' || item.category === selectedCat
+    const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.summary.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+  const latestOpportunities = opportunities.slice(1, 5)
+  // Search
+  
+
+
+
   useEffect(() => {
     async function fetchOpportunities() {
       const { data, error } = await supabase.from('opportunities').select('*').eq('published', true).order('created_at', { ascending: false })
@@ -63,6 +81,9 @@ const Home = () => {
       </div>
     )
   }
+
+
+
   return (
 
     <div>
@@ -78,8 +99,31 @@ const Home = () => {
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Latest Opportunities
         </h2>
+        {/* Latest Updates */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {latestOpportunities.map((opportunity) => (
+            <OpportunityCard key={opportunity.id} opportunity={opportunity} isNew={true} />
+          ))}
+        </div>
+        {/* Filter */}
+        <div className=''>
+          <select
+            name="Category"
+            value={selectedCat}
+            onChange={(e) => setSelectedCat(e.target.value)}
+            className="p-2 border border-gray-300 rounded mb-4"
+          >
+            <option value="All">All Categories</option>
+            <option value="Scholarship">Scholarships</option>
+            <option value="Fellowship">Fellowships</option>
+            <option value="Internship">Internships</option>
+            <option value="Job">Jobs</option>
+          </select>
+          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {opportunities.map((opportunity) => (
+          {filteredOpportunities.map((opportunity) => (
             <OpportunityCard key={opportunity.id} opportunity={opportunity} />
           ))}
         </div>
