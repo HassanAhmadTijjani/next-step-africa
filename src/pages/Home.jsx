@@ -47,7 +47,7 @@ const Home = () => {
       item.summary.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesCategory && matchesSearch
   })
-  const latestOpportunities = opportunities.slice(1, 5)
+  const latestOpportunities = opportunities.slice(1, 3)
   // Search
   
 
