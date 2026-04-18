@@ -36,10 +36,10 @@ const App = () => {
         <Route path='/' element={<Layout><Home /></Layout>} />
         <Route path='/about' element={<Layout><About /></Layout>} />
         <Route path='/opportunity/:id' element={<Layout>< SinglePost /></Layout>} />
-        <Route path='/admin/login' element={<AdminLogin />} />
-        <Route path='admin/dashboard' element={ <ProtectedRoute><AdminDashboard /> </ProtectedRoute>} />
-        <Route path='/privacy/policy' element={<Layout> <PrivacyPolicy /> </Layout>} />
-        <Route path='/terms/conditions' element={<Layout> <TermsConditions /> </Layout>} />
+        <Route path='/admin-login' element={<AdminLogin />} />
+        <Route path='admin-dashboard' element={ <ProtectedRoute><AdminDashboard /> </ProtectedRoute>} />
+        <Route path='/privacy-policy' element={<Layout> <PrivacyPolicy /> </Layout>} />
+        <Route path='/terms-conditions' element={<Layout> <TermsConditions /> </Layout>} />
 
       </Routes>
       <Analytics />
