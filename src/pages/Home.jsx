@@ -95,7 +95,7 @@ const Home = () => {
         </p>
       </section>
       <section className="max-w-7xl mx-auto py-12 px-6">
-        <p>Note: by completing any application you consent and agree to our <Link to='/terms/conditions' className='italic text-blue-400'>Terms and conditions</Link> and <Link to='/privacy/policy' className='itaic text-blue-400'>Privacy policy</Link> </p>
+        <p>Note: by completing any application you consent and agree to our <Link to='/terms-conditions' className='italic text-blue-400'>Terms and conditions</Link> and <Link to='/privacy-policy' className='itaic text-blue-400'>Privacy policy</Link> </p>
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Latest Opportunities
         </h2>
