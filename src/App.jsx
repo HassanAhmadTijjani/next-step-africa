@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import ReactGA from 'react-ga4'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import Home from './pages/Home'
 import About from './pages/About'
 import SinglePost from './pages/SinglePost'

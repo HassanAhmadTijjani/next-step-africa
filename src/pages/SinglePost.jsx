@@ -162,7 +162,7 @@ function SinglePost() {
         <ArrowLeft className='inline-block mr-4 text-blue-400' /> Back to Opportunities
       </Link>
       {/* Headers */}
-      <div className="flex  items-center gap-4 mt-4">
+      <div className="flex  items-center gap-4 mt-4 text-white">
         <span className="bg-blue-700 text-white p-2  rounded">
           <h2>{opportunity.category}</h2>
         </span>
@@ -212,7 +212,7 @@ function SinglePost() {
             {/* Bemefits */}
             {opportunity.benefits && (
               <div className="mt-6 mb-8">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 bg-blue-600 p-2 rounded text-white font-bold rounded shadow-lg">{opportunity.category} Benefit</h3>
+                <h3 className="text-lg font-bold text-white mb-4 bg-blue-600 p-2  rounded shadow-lg">{opportunity.category} Benefit</h3>
                 <ul className="text-gray-600 space-y-2 list-inside">
                   {opportunity.benefits.split('\n').map((benefits, index) => (
                     benefits.trim() !== '' && (<li key={index} className='leading-relaxed before:content-["✓"]  before:mr-3 before:text-blue-500 before:font-bold'>{benefits.trim()}</li>)
@@ -223,7 +223,7 @@ function SinglePost() {
             {/* Requirements */}
             {opportunity.requirements && (
               <div className="mt-6 mb-8">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 bg-yellow-600 p-2 text-white font-bold rounded shadow-lg">Eligibility Criteria</h3>
+                <h3 className="text-lg font-bold  mb-4 bg-yellow-600 p-2 text-white rounded shadow-lg">Eligibility Criteria</h3>
                 <ul className="text-gray-600 space-y-2 list-inside">
                   {opportunity.requirements.split('\n').map((requirements, index) => (
                     requirements.trim() !== '' && (<li key={index} className='leading-relaxed before:content-["✓"]  before:mr-3 before:text-yellow-500 before:font-bold'>{requirements.trim()}</li>)
